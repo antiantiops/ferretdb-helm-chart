@@ -3,7 +3,29 @@ entries:
   ferretdb:
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2026-07-27T08:31:05.531929672Z"
+    created: "2026-07-27T09:35:27.555510279Z"
+    description: A Helm chart for FerretDB - MongoDB-compatible database backed by
+      PostgreSQL
+    digest: 15a864b13ab6fc7ead1f9ee06f71a1c6ccec34e2497baaa37782089b17fa93dc
+    home: https://www.ferretdb.com/
+    icon: https://docs.ferretdb.io/img/logo-dark.png
+    keywords:
+    - mongodb
+    - postgresql
+    - ferretdb
+    - database
+    maintainers:
+    - name: antiantiops
+    name: ferretdb
+    sources:
+    - https://github.com/FerretDB/FerretDB
+    type: application
+    urls:
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.3/ferretdb-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 2.7.0
+    created: "2026-07-27T09:35:27.555241629Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: 2f2d470cb806cf6f9c146d2d08367697fbf7ebaf4fa022071004e18958ea18a9
@@ -21,11 +43,11 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.2/ferretdb-0.1.2.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.3/ferretdb-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2026-07-27T08:31:05.531611615Z"
+    created: "2026-07-27T09:35:27.554941362Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: a1dc6635a589a7b50b79d73102975d52b575c68ef687c70ccc851041c859e506
@@ -43,6 +65,6 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.2/ferretdb-0.1.1.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.3/ferretdb-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-27T08:31:05.531143076Z"
+generated: "2026-07-27T09:35:27.554456922Z"
