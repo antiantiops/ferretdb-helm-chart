@@ -1,0 +1,72 @@
+name: Release Helm chart
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - index.yaml
+      - '*.tgz'
+  workflow_dispatch: {}
+
+concurrency:
+  group: release-chart
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v4
+
+      - name: Lint chart
+        run: helm lint ferretdb
+
+      - name: Read current chart version
+        id: chart
+        run: |
+          VERSION=$(grep '^version:' ferretdb/Chart.yaml | awk '{print $2}')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Bump patch version
+        id: bump
+        run: |
+          CURRENT="${{ steps.chart.outputs.version }}"
+          IFS='.' read -r MAJOR MINOR PATCH <<< "$CURRENT"
+          NEW_VERSION="${MAJOR}.${MINOR}.$((PATCH + 1))"
+          sed -i "s/^version: .*/version: $NEW_VERSION/" ferretdb/Chart.yaml
+          echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Package chart
+        run: helm package ferretdb
+
+      - name: Update index
+        run: |
+          if [ -f index.yaml ]; then
+            helm repo index . --merge index.yaml --url https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-${{ steps.bump.outputs.new_version }}
+          else
+            helm repo index . --url https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-${{ steps.bump.outputs.new_version }}
+          fi
+
+      - name: Publish chart source, archive, and index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ferretdb/Chart.yaml index.yaml "ferretdb-${{ steps.bump.outputs.new_version }}.tgz"
+          git commit -m "Release ferretdb-${{ steps.bump.outputs.new_version }}"
+          git push
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "ferretdb-${{ steps.bump.outputs.new_version }}" \
+            "ferretdb-${{ steps.bump.outputs.new_version }}.tgz" \
+            --title "ferretdb-${{ steps.bump.outputs.new_version }}" \
+            --notes "Helm chart release ferretdb-${{ steps.bump.outputs.new_version }} (appVersion: $(grep '^appVersion:' ferretdb/Chart.yaml | awk '{print $2}' | tr -d '\"'))"

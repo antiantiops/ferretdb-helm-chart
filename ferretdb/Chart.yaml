@@ -1,0 +1,17 @@
+apiVersion: v2
+name: ferretdb
+description: A Helm chart for FerretDB - MongoDB-compatible database backed by PostgreSQL
+type: application
+version: 0.1.0
+appVersion: "2.7.0"
+keywords:
+  - mongodb
+  - postgresql
+  - ferretdb
+  - database
+home: https://www.ferretdb.com/
+icon: https://docs.ferretdb.io/img/logo-dark.png
+sources:
+  - https://github.com/FerretDB/FerretDB
+maintainers:
+  - name: antiantiops

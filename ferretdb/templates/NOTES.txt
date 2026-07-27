@@ -1,0 +1,10 @@
+FerretDB has been deployed!
+
+Connect using mongosh or any MongoDB client:
+
+  mongosh "mongodb://{{ include "ferretdb.fullname" . }}.{{ .Release.Namespace }}.svc:{{ .Values.service.port }}/"
+
+{{- if .Values.ferretdb.auth }}
+
+Authentication is enabled. Use your PostgreSQL-backed credentials to connect.
+{{- end }}

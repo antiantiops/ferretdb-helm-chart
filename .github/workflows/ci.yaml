@@ -1,0 +1,26 @@
+name: Lint and Test
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'ferretdb/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v4
+
+      - name: Lint chart
+        run: helm lint ferretdb
+
+      - name: Template chart
+        run: |
+          helm template test ferretdb \
+            --set ferretdb.postgresqlUrl="postgres://user:pass@host:5432/db"
