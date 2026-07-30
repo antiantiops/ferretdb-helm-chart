@@ -27,6 +27,7 @@ helm install ferretdb ferretdb/ferretdb --set ferretdb.postgresqlUrl="postgres:/
 | existingSecret.name | string | `""` | Secret name |
 | existingSecret.key | string | `uri` | Secret key |
 | externalSecret.enabled | bool | `false` | Create an ExternalSecret (requires [External Secrets Operator](https://external-secrets.io)) |
+| externalSecret.annotations | object | `{}` | Annotations applied to the ExternalSecret |
 | externalSecret.refreshInterval | string | `1h` | How often to refresh from the remote store |
 | externalSecret.secretStoreRef.name | string | `""` | SecretStore or ClusterSecretStore name |
 | externalSecret.secretStoreRef.kind | string | `SecretStore` | `SecretStore` or `ClusterSecretStore` |

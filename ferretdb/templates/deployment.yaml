@@ -39,8 +39,8 @@ spec:
             - name: FERRETDB_POSTGRESQL_URL
               valueFrom:
                 secretKeyRef:
-                  name: {{ .Values.externalSecret.targetSecretName | default (printf "%s-pg-credentials" (include "ferretdb.fullname" .)) }}
-                  key: {{ .Values.externalSecret.secretKey | default "uri" }}
+                  name: {{ .Values.externalSecret.targetSecretName | default (printf "%s-pg-credentials" (include "ferretdb.fullname" .)) | quote }}
+                  key: {{ .Values.externalSecret.secretKey | default "uri" | quote }}
             {{- else if .Values.existingSecret.enabled }}
             - name: FERRETDB_POSTGRESQL_URL
               valueFrom:
