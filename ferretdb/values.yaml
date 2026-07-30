@@ -19,6 +19,32 @@ existingSecret:
   name: ""
   key: "uri"
 
+## External Secrets Operator (external-secrets.io) support
+## Creates an ExternalSecret resource that syncs the PostgreSQL URL from
+## an external secret store (AWS SSM, Vault, GCP Secret Manager, etc.)
+externalSecret:
+  enabled: false
+  annotations: {}
+  ## How often to refresh the secret from the remote store
+  refreshInterval: "1h"
+  ## Reference to a SecretStore or ClusterSecretStore
+  secretStoreRef:
+    name: ""
+    kind: SecretStore  # or ClusterSecretStore
+  ## Name of the Kubernetes Secret created by ExternalSecret
+  ## Defaults to <fullname>-pg-credentials
+  targetSecretName: ""
+  ## Secret creation/deletion policies
+  creationPolicy: Owner
+  deletionPolicy: Retain
+  ## Key name in the created Kubernetes Secret
+  secretKey: "uri"
+  ## Remote secret reference
+  remoteRef:
+    key: ""          # required — path/key in the secret store
+    property: ""     # optional — JSON property within the secret
+    version: ""      # optional — secret version
+
 serviceAccount:
   create: true
   automount: true
