@@ -3,7 +3,29 @@ entries:
   ferretdb:
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2026-07-28T08:48:51.412403698Z"
+    created: "2026-07-30T06:39:14.560301224Z"
+    description: A Helm chart for FerretDB - MongoDB-compatible database backed by
+      PostgreSQL
+    digest: 36395f164a92e58e86b9cb1d94f782c2b95727a6b526b35525770120bc543085
+    home: https://www.ferretdb.com/
+    icon: https://docs.ferretdb.io/img/logo-dark.jpg
+    keywords:
+    - mongodb
+    - postgresql
+    - ferretdb
+    - database
+    maintainers:
+    - name: antiantiops
+    name: ferretdb
+    sources:
+    - https://github.com/FerretDB/FerretDB
+    type: application
+    urls:
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.2.1/ferretdb-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 2.7.0
+    created: "2026-07-30T06:39:14.559931936Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: e3bebdec269a2c945e5604b412fceb572788b04c4d681425ca0cf60a5bef067d
@@ -21,11 +43,11 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.6/ferretdb-0.1.6.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.2.1/ferretdb-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v2
     appVersion: "null"
-    created: "2026-07-28T08:48:51.41206106Z"
+    created: "2026-07-30T06:39:14.559647764Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: 9fb9bb482ef216d3cdfe259bb414370a127b811e1046e1fdcb05d2238eaa7549
@@ -43,11 +65,11 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.6/ferretdb-0.1.5.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.2.1/ferretdb-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v2
     appVersion: "null"
-    created: "2026-07-28T08:48:51.411108713Z"
+    created: "2026-07-30T06:39:14.559403281Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: 79c526146fd46f3931635dd1df8677bec5b13f5a29d0c2edf8a616f9a0b05dc3
@@ -65,11 +87,11 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.6/ferretdb-0.1.4.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.2.1/ferretdb-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2026-07-28T08:48:51.410442893Z"
+    created: "2026-07-30T06:39:14.559140912Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: 15a864b13ab6fc7ead1f9ee06f71a1c6ccec34e2497baaa37782089b17fa93dc
@@ -87,11 +109,11 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.6/ferretdb-0.1.3.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.2.1/ferretdb-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2026-07-28T08:48:51.410153965Z"
+    created: "2026-07-30T06:39:14.558844201Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: 2f2d470cb806cf6f9c146d2d08367697fbf7ebaf4fa022071004e18958ea18a9
@@ -109,11 +131,11 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.6/ferretdb-0.1.2.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.2.1/ferretdb-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
     appVersion: 2.7.0
-    created: "2026-07-28T08:48:51.40985582Z"
+    created: "2026-07-30T06:39:14.558501723Z"
     description: A Helm chart for FerretDB - MongoDB-compatible database backed by
       PostgreSQL
     digest: a1dc6635a589a7b50b79d73102975d52b575c68ef687c70ccc851041c859e506
@@ -131,6 +153,6 @@ entries:
     - https://github.com/FerretDB/FerretDB
     type: application
     urls:
-    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.1.6/ferretdb-0.1.1.tgz
+    - https://github.com/antiantiops/ferretdb-helm-chart/releases/download/ferretdb-0.2.1/ferretdb-0.1.1.tgz
     version: 0.1.1
-generated: "2026-07-28T08:48:51.409455685Z"
+generated: "2026-07-30T06:39:14.558074559Z"
